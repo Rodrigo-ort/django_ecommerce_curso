@@ -9,9 +9,9 @@ class ProductListView(ListView):
     template_name = "products/list.html"
 
 #function based view
-def product_list_view(request):
-    queryset = Product.objects.all()
-    context = {
-        'object_list': queryset
-    }
-    return render(request, "products/list.html", context)
+#def product_list_view(request):
+#    queryset = Product.objects.all()
+#    context = {
+#        'object_list': queryset
+#    }
+#    return render(request, "products/list.html", context)
