@@ -21,9 +21,11 @@ def about_page(request):
     return render(request, "about/view.html", context)
 
 def contact_page(request):
+    contact_form = ContactForm(request.POST or None)
     context = {
         "title": "Contact Page",
-        "content": "Bem-vindo a Contact Page"
+        "content": "Bem-vindo a Contact Page",
+        "form": contact_form
     }
     return render(request, "contact/view.html", context)
 
@@ -65,4 +67,4 @@ def register_page(request):
         password = form.cleaned_data.get("password")
         new_user = User.objects.create_user(username, email, password)
         print(new_user)
-    return render(reques, "auth/register.html", context)
+    return render(request, "auth/register.html", context)
